@@ -1,6 +1,9 @@
 /** 全局公共样式 */
-
+*{
+  padding: 0;
+  margin: 0;
+}
 p {
-  color: red;
+  color: #888;
   font-size: $fontSize;
 }

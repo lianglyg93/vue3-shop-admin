@@ -1,10 +1,19 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
+// import productRouter from './modules/product.ts'
+import layOut from '@/layout/index.vue'
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    // 不能省略 .vue,否则ts不知道是什么类型文件
-    component: () => import('../views/home/index.vue')
+    component: layOut,
+    children: [
+      {
+        path: '', // 默认子路由
+        // 不能省略 .vue,否则ts不知道是什么类型文件
+        component: () => import('../views/home/index.vue')
+      }
+    ]
   }, {
     path: '/login',
     component: () => import('../views/login/index.vue')

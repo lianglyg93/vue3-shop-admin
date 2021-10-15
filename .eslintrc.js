@@ -4,25 +4,26 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: [
-    'plugin:vue/vue3-strongly-recommended',
-    'standard'
-  ],
+  extends: ['plugin:vue/vue3-strongly-recommended', 'standard'],
   parserOptions: {
     ecmaVersion: 12,
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
-  plugins: [
-    'vue',
-    '@typescript-eslint'
-  ],
-  rules: {
-  },
+  plugins: ['vue', '@typescript-eslint'],
+  rules: {},
   globals: {
     defineProps: 'readonly',
     defineEmits: 'readonly',
     defineExpose: 'readonly',
     withDefaults: 'readonly'
-  }
+  },
+  overrides: [
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 'off'
+      }
+    }
+  ]
 }
